@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tache-2 atelier js</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        margin: auto;
+
+    }
+    h1{
+        text-align: center;
+        font-size: 48px;
+        font-weight: 600;
+    }
+    #date{
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+    #affichage{
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+    h2{
+        text-align: center;
+        font-size: 28px;
+        font-weight: 500;
+    }
+     .francais{
+        margin-top: 10rem;
+     }
+    .datefrancais{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+    }
+</style>
+<body>
+    <h1>Types de Données en JavaScript</h1>
+    <div class="anglais">
+        <h2>affichage en Anglais</h2>
+        <p id="date"></p>
+        <p id="affichage"></p>
+    </div>
+
+<div class="francais">
+    <h2>Affichage en francais </h2>
+    <p class="datefrancais"></p>
+
+</div>
+    <script>
+        // Declaration d'une variable de type int
+         let sommes = 20;
+        //  alert(' sommes est de type : ' + typeof sommes);
+
+        //  conversion en string
+         sommes = String( sommes);
+        //  alert('str est de type : ' + typeof str);
+
+        //  affichange par alert
+        alert(' sommes est de type : ' + typeof sommes);
+
+        // une variable de type date 
+        let date = new Date () ;
+
+        // recuperation du jour
+         let day = date.getDay();
+         console.log(day)
+
+        //  recuperation du date 
+        let dateJ = date.getDate();
+        console.log(dateJ)
+
+
+        // ajout d'un 0 devant les chiffres inferieurs a 10
+
+        if(dateJ < 10){
+            dateJ = '0' + dateJ;
+        }
+        // recuperation du mois
+        let mois = date.getMonth() + 1;
+        console.log(mois)
+//    ajout de 0 devant les chiffres inferieur a 10
+         if(mois < 10){
+         mois = '0' + mois;
+        }
+        // recuperation de l'annee
+        let annee = date.getFullYear();
+        console.log(annee)
+
+        // affichage du date sur le console 
+        let affichage =  dateJ  + ' : ' +  mois  + ' : ' + annee;
+        console.log(affichage)
+        alert(affichage)
+        // affichons la date du jour dans notre page
+        document.getElementById('date').innerHTML = date;    
+        document.getElementById('affichage').innerHTML = "aujourd'hui c'est le : " + affichage;   
+        console.log(date);
+
+        // conversion de la date en francais
+
+        let joursf = ['Dimache', 'lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+        let moisf = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octombre', 'Novembre', 'Decembre'];
+
+        let jour = joursf[date.getDay()];
+
+        let moif = moisf[date.getMonth()];
+        console.log(moif)
+
+        let datef = date.getDate();
+
+        console.log(datef);
+
+        let anneeF = date.getFullYear();
+
+        // ajout de 0 sur les chiffres inferieurs a 10.
+
+        if(datef < 10){
+          datef = ' 0'+ datef;
+        }
+
+        // affichage du date en Francais
+
+        let affichageFrance = jour + ' / ' + datef + ' / ' + moif + ' / ' + anneeF;
+        console.log(affichageFrance)
+
+        // afficher la date en francais
+
+        document.querySelector('.francais .datefrancais').innerHTML ="la date du jour est : " + affichageFrance;
+        
+        
+    </script>
+</body>
+</html>
